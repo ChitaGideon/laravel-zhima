@@ -1,0 +1,16 @@
+{
+    "name": "zmop/laravel-zhima",
+    "description": "zhima for laravel5",
+    "authors": [
+        {
+            "name": "Chita",
+            "email": "hidfeel@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Zmop\\Zhima\\": "src/"
+        }
+    }
+}
