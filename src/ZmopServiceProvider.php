@@ -28,8 +28,9 @@ class ToastrServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['zmop'] = $this->app->share(function ($app) {
-            return new ZmopClient($app['session'], $app['config']);
+        $this->app->singleton(['Zmop\\Zhima\\ZmopClient' => 'zmop'], function ($app) {
+            $config = $app['config']["zmop"];
+            return new ZmopClient($config["gatewayUrl"],$config["appId"],$config["charset"],$config["privateKeyFilePath"],$config["zhiMaPublicKeyFilePath"]);
         });
     }
 
